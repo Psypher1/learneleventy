@@ -1,5 +1,6 @@
 ---
 layout: base
+title: Home
 ---
 
 # My Eleventy Site
