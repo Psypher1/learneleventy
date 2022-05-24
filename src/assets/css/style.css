@@ -12,4 +12,55 @@ html {
 
 body {
   font-family: "Sora", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 3.5rem;
+  width: 100%;
+  background-color: black;
+  color: lightgray;
+}
+
+nav > a {
+  display: block;
+  padding: 1rem 2rem;
+  color: lightgray;
+}
+nav > a:hover {
+  color: aqua;
+}
+
+main {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  min-height: 100vh;
+}
+
+main > h1 {
+  margin: 2rem 0 0.5rem;
+}
+
+main > img {
+  border-radius: 5px;
+}
+
+footer {
+  background-color: black;
+  color: lightgray;
+  padding: 2rem;
 }
