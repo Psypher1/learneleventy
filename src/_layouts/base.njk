@@ -7,6 +7,10 @@
     <title>My Eleventy Site - {{title}}</title>
   </head>
   <body>
+
+  {% include "partials/_navigation.njk" %}
+  <main> 
     {{content | safe}}
+    </main>
   </body>
 </html>
