@@ -1,0 +1,15 @@
+---
+layout: base
+title: Blog
+tags: page
+---
+
+<h1>Blog Home</h1>
+
+<ul>
+    {% for post in collections.post %}
+        <li>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+        </li>
+    {% endfor %}
+</ul>

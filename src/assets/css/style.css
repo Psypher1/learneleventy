@@ -62,5 +62,6 @@ main > img {
 footer {
   background-color: black;
   color: lightgray;
-  padding: 2rem;
+  padding: 1.5rem;
+  text-align: center;
 }
