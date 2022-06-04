@@ -51,6 +51,11 @@ main {
   min-height: 100vh;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-around;
+}
+
 main > h1 {
   margin: 2rem 0 0.5rem;
 }
