@@ -9,6 +9,13 @@ module.exports = function(eleventyConfig) {
         <p>${subtitle}</p>`
   );
 
+  // Page Sorting
+  eleventyConfig.addCollection("page", function(collections) {
+    return collections.getFilteredByTag("page").sort(function(a, b) {
+      return a.data.order - b.data.order;
+    });
+  });
+
   return {
     dir: {
       input: "src",
