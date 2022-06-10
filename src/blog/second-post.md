@@ -1,5 +1,6 @@
 ---
 title: Second Post
+date: 2022-05-30
 ---
 
 # Second Post
