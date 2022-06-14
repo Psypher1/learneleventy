@@ -56,6 +56,27 @@ main {
   justify-content: space-around;
 }
 
+.blog-list {
+  list-style-type: none;
+  margin-top: 2rem;
+}
+.blog-list-item {
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 0 1px gray;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.blog-list-link {
+  font-size: 1.2rem;
+}
+.blog-list-link:hover {
+  color: aqua;
+}
+.blog-list-date {
+  font-size: 0.8rem;
+}
+
 main > h1 {
   margin: 2rem 0 0.5rem;
 }

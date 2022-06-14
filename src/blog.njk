@@ -8,10 +8,11 @@ order: 3
 
 <h1>Blog Home</h1>
 
-<ul>
+<ul class='blog-list'>
     {% for post in collections.post %}
-        <li>
-            <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <li class="blog-list-item">
+            <a class="blog-list-link" href="{{ post.url }}">{{ post.data.title }}</a>
+            <small class="blog-list-date">{{post.date | postDate}}</small>
         </li>
     {% endfor %}
 </ul>
