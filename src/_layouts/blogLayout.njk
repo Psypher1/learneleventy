@@ -2,14 +2,26 @@
 layout: base
 ---
 
+<div class="prose">
 {{content| safe}}
+</div>
 
 <br/>
-<hr>
+
+<div class="border-t border-gray-400"></div>
 <br>
+{# {% include "partials/_postDate.njk"%} #}
+
 {% include "partials/_paginate.njk" %}
 
 <br>
-<hr>
+<div class="border-t border-gray-400"></div>
 <br>
-<a href="/blog">Blog Home</a>
+<a class='text-center font-semibold text-sky-600 block uppercase text-lg' href="/blog">Blog Home</a>
+
+
+{# <div class="relative flex py-5 items-center">
+    <div class="flex-grow border-t border-gray-400"></div>
+    <span class="flex-shrink mx-4 text-gray-400">Break</span>
+    <div class="flex-grow border-t border-gray-400"></div>
+</div> #}

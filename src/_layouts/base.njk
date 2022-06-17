@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet"> 
 
   {# stylesheet #}
-   <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
+   {# <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}"> #}
+   <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
 
    {# Meta #}
     <title>{{site.name}}{% if title %} - {{title}} {% endif %} </title>
@@ -25,7 +26,9 @@
   <body>
 
   {% include "partials/_navigation.njk" %}
-  <main> 
+
+  
+  <main class="max-w-3xl mx-auto py-12 min-h-screen"> 
     {{content | safe}}
     </main>
      {% include "partials/_footer.njk" %}
