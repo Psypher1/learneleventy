@@ -4,7 +4,7 @@ description: This is my first post
 date: 2022-05-27
 ---
 
-# First Post
+# {{title}}
 
 <!-- {{page.date | dateStuff}} -->
 

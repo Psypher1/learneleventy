@@ -1,9 +1,12 @@
----
-layout: base
----
+{% extends "./base.njk" %}
+
+{% block content %}
 
 <div class="prose">
 {{content| safe}}
+<small>
+{{page.date | postDate}}
+</small>
 </div>
 
 <br/>
@@ -18,7 +21,7 @@ layout: base
 <div class="border-t border-gray-400"></div>
 <br>
 <a class='text-center font-semibold text-sky-600 block uppercase text-lg' href="/blog">Blog Home</a>
-
+{% endblock %}
 
 {# <div class="relative flex py-5 items-center">
     <div class="flex-grow border-t border-gray-400"></div>

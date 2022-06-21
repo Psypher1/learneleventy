@@ -1,25 +1,27 @@
 const { DateTime } = require("luxon");
+const pageHeading = require("./src/_includes/shortcodes/pageHeading");
 
 module.exports = function(eleventyConfig) {
+  //* PASSTHROUGH COPIES
   eleventyConfig.addPassthroughCopy("src/assets/css/style.css");
   eleventyConfig.addPassthroughCopy("src/assets/images");
+  eleventyConfig.addPassthroughCopy({ "src/robots.txt": "/robots.txt" });
 
-  eleventyConfig.addShortcode(
-    "headers",
-    (title, subtitle) =>
-      `<h1>${title}</h1>
-        <p>${subtitle}</p>`
-  );
+  // eleventyConfig.addShortcode(
+  //   "headers",
+  //   (title, subtitle) =>
+  //     `<h1>${title}</h1>
+  //       <p>${subtitle}</p>`
+  // );
 
-  // Page Sorting
+  eleventyConfig.addShortcode("pageHeading", pageHeading);
+
+  //* Collection to sort pages
   eleventyConfig.addCollection("page", function(collections) {
     return collections.getFilteredByTag("page").sort(function(a, b) {
       return a.data.order - b.data.order;
     });
   });
-
-  // SEO
-  eleventyConfig.addPassthroughCopy({ "src/robots.txt": "/robots.txt" });
 
   eleventyConfig.addShortcode("currentDate", (date = DateTime.now()) => {
     return date;

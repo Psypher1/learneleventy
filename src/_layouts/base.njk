@@ -29,8 +29,12 @@
 
   
   <main class="max-w-3xl mx-auto py-12 min-h-screen"> 
+    {% block content %}
+      
     {{content | safe}}
-    </main>
+    {% endblock %}
+  </main>
+
      {% include "partials/_footer.njk" %}
   </body>
 </html>
