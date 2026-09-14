@@ -1,0 +1,29 @@
+{
+  "name": "learneleventy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "dev": "exec eleventy --serve",
+    "build": "exec eleventy",
+    "write": "exec prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.0.9",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+
+}
