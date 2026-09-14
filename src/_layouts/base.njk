@@ -12,7 +12,8 @@
       rel="stylesheet"
     />
     {# css #}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" />
+    {# <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" /> #}
+    <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}" />
 
     <!-- Meta -->
     {# prettier-ignore #}
@@ -33,9 +34,11 @@
     />
   </head>
 
-  <body>
+  <body class="min-h-screen grid grid-rows-[auto_1fr_auto]">
     {% include "partials/_navigation.njk" %}
-    <main>{{ content | safe }}</main>
+    <main class="min-h-screeen w-full max-w-5xl mx-auto py-12">
+      {{ content | safe }}
+    </main>
     {% include "partials/_footer.njk" %}
   </body>
 </html>

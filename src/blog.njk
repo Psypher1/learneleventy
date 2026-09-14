@@ -5,13 +5,19 @@ tags: page
 order: 3
 ---
 
-<h1>Blog Home</h1>
+<section class="">
+  <h1 class="text-4xl font-semibold">Blog Home</h1>
 
-<ul class="blog-list">
-  {% for post in collections.post %}
-    <li class="blog-list-item">
-      <a href="{{ post.url }}" class="blog-link">{{ post.data.title }}</a>
-      <small class="blog-date">{{ post.date | postDate }}</small>
-    </li>
-  {% endfor %}
-</ul>
+  <ul class="blog-list mt-5 space-y-5">
+    {% for post in collections.post %}
+      <li class="blog-list-item shadow-lg p-4">
+        <a
+          href="{{ post.url }}"
+          class="block font-semibold text-lg hover:text-cyan-800 blog-link"
+          >{{ post.data.title }}</a
+        >
+        <small class="blog-date">{{ post.date | postDate }}</small>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

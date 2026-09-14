@@ -1,15 +1,25 @@
 import { DateTime } from "luxon";
+import tailwindcss from "@tailwindcss/vite";
+import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/assets/css/style.css");
+  // vite
+  eleventyConfig.addPlugin(EleventyVitePlugin, {
+    viteOptions: {
+      plugins: [tailwindcss()],
+    },
+  });
+
+  // pass through copies
+  eleventyConfig.addPassthroughCopy("src/assets/css");
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "/robots.txt" });
 
   eleventyConfig.addShortcode(
     "headers",
-    (title, subtitle) =>
-      `<h1>${title}</h1>
-        <p>${subtitle}</p>`,
+    (title, subtitle, titleClass = "", subtitleClass = "") =>
+      `<h1 class="${titleClass}">${title}</h1>
+     <p class="${subtitleClass}">${subtitle}</p>`,
   );
 
   eleventyConfig.addCollection("page", function (collections) {
