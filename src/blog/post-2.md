@@ -1,6 +1,7 @@
 ---
 title: Second Post
 description: This is my second post
+date: 2022-05-26
 ---
 
 # Second Post
