@@ -1,5 +1,6 @@
 <!-- _includes/partials/_navigation.njk-->
 <nav>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
+  {%- for item in collections.page -%}
+    <a href="{{ item.url }}">{{ item.data.title }}</a>
+  {%- endfor -%}
 </nav>
