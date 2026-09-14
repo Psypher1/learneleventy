@@ -63,3 +63,15 @@ footer {
   color: lightgray;
   padding: 2rem;
 }
+
+.paginate {
+  display: flex;
+  justify-content: space-around;
+  padding-block: 2rem;
+  border-bottom: 1px solid gray;
+}
+
+.blog-home {
+  display: block;
+  margin-top: 1rem;
+}

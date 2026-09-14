@@ -13,8 +13,26 @@
     />
     {# css #}
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" />
-    <title>{{ title }} - My Eleventy Site</title>
+
+    <!-- Meta -->
+    {# prettier-ignore #}
+    <title>
+      {{ site.name }}{% if title %}
+        | {{ title }}
+      {% endif %}
+    </title>
+    <meta
+      name="description"
+      content="
+      {% if description %}
+        {{ description }}
+      {% else %}
+        {{ site.description }}
+      {% endif %}
+    "
+    />
   </head>
+
   <body>
     {% include "partials/_navigation.njk" %}
     <main>{{ content | safe }}</main>
