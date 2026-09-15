@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "exec eleventy --serve",
-    "build": "exec eleventy",
+    "build": "exec eleventy ",
     "write": "exec prettier --write ."
   },
   "keywords": [],
@@ -23,6 +23,7 @@
     "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-plugin-vite": "^8.0.0",
     "@tailwindcss/vite": "^4.3.3",
+    "eleventy-plugin-tailwindcss-4": "^3.0.0",
     "luxon": "^3.7.2",
     "tailwindcss": "^4.3.3"
   },
