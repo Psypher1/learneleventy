@@ -3,20 +3,40 @@ layout: base
 title: Blog
 tags: page
 order: 3
+pagination:
+  data: posts
+  size: 7
+  alias: pagedPosts
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber }}/{% endif %}"
 ---
 
 <section class="">
   {% headers "Blog" %}
   <ul class="blog-list mt-5 space-y-5">
-    {% for post in posts %}
+    {% for post in pagedPosts %}
       <li class="blog-list-item shadow-lg bg-white p-4">
         <a
           href="/blog/{{ post.slug }}/"
           class="block font-semibold text-lg hover:text-cyan-800 blog-link"
-          >{{ post.title }}</a
         >
+          {{ post.title }}
+        </a>
         <small class="blog-date">{{ post.published_at | pubDate }}</small>
       </li>
     {% endfor %}
   </ul>
+
+  <nav class="flex justify-evenly mt-8">
+    {% if pagination.previousPageHref %}
+      <a href="{{ pagination.previousPageHref }}" class="hover:text-sky-600"
+        >← Newer</a
+      >
+    {% endif %}
+
+    {% if pagination.nextPageHref %}
+      <a href="{{ pagination.nextPageHref }}" class="hover:text-sky-600"
+        >Older →</a
+      >
+    {% endif %}
+  </nav>
 </section>

@@ -13,4 +13,18 @@ eleventyComputed:
 <section>
   <h1 class="text-3xl font-bold">{{ post.title }}</h1>
   <div class="prose mt-5">{{ post.body_markdown | markdown | safe }}</div>
+
+  <nav class="flex justify-evenly mt-12 border-t border-slate-700 py-4">
+    {% if pagination.previousPageHref %}
+      <a href="{{ pagination.previousPageHref }}" class="hover:text-sky-600"
+        >← Previous</a
+      >
+    {% endif %}
+
+    {% if pagination.nextPageHref %}
+      <a href="{{ pagination.nextPageHref }}" class="hover:text-sky-600"
+        >Next →</a
+      >
+    {% endif %}
+  </nav>
 </section>
