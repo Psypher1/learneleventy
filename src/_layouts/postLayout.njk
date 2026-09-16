@@ -1,0 +1,16 @@
+---
+layout: base
+pagination:
+  data: posts
+  size: 1
+  alias: post
+permalink: "/blog/{{ post.slug | slugify }}/"
+templateEngineOverride: "njk,md"
+eleventyComputed:
+  title: "{{ post.title }}"
+---
+
+<section>
+  <h1 class="text-3xl font-bold">{{ post.title }}</h1>
+  <div class="prose mt-5">{{ post.body_markdown | markdown | safe }}</div>
+</section>

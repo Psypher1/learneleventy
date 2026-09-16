@@ -8,14 +8,14 @@ order: 3
 <section class="">
   {% headers "Blog" %}
   <ul class="blog-list mt-5 space-y-5">
-    {% for post in collections.post | reverse %}
+    {% for post in posts %}
       <li class="blog-list-item shadow-lg bg-white p-4">
         <a
-          href="{{ post.url }}"
+          href="/blog/{{ post.slug }}/"
           class="block font-semibold text-lg hover:text-cyan-800 blog-link"
-          >{{ post.data.title }}</a
+          >{{ post.title }}</a
         >
-        <small class="blog-date">{{ post.date | postDate }}</small>
+        <small class="blog-date">{{ post.published_at | pubDate }}</small>
       </li>
     {% endfor %}
   </ul>

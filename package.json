@@ -23,11 +23,15 @@
     "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-plugin-vite": "^8.0.0",
     "@tailwindcss/vite": "^4.3.3",
+    "date-fns": "^4.4.0",
+    "dotenv": "^17.4.2",
     "eleventy-plugin-tailwindcss-4": "^3.0.0",
     "luxon": "^3.7.2",
+    "markdown-it": "^15.0.2",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
     "prettier": "^3.8.1",
     "prettier-plugin-jinja-template": "^2.2.0"
   }
