@@ -1,18 +1,22 @@
 ---
 layout: base
 title: Blog
-description: This is the blog home
 tags: page
 order: 3
 ---
 
-<h1 class="text-4xl font-bold mb-8">Blog Home</h1>
-
-<ul class='space-y-4'>
-    {% for post in collections.post %}
-        <li class='shadow-lg p-4 ' >
-            <a class="text-lg block hover:text-sky-400 font-semibold text-gray-700" href="{{ post.url }}">{{ post.data.title }}</a>
-            <small class="text-sm text-gray-500">{{post.date | postDate}}</small>
-        </li>
+<section class="">
+  {% headers "Blog" %}
+  <ul class="blog-list mt-5 space-y-5">
+    {% for post in collections.post | reverse %}
+      <li class="blog-list-item shadow-lg bg-white p-4">
+        <a
+          href="{{ post.url }}"
+          class="block font-semibold text-lg hover:text-cyan-800 blog-link"
+          >{{ post.data.title }}</a
+        >
+        <small class="blog-date">{{ post.date | postDate }}</small>
+      </li>
     {% endfor %}
-</ul>
+  </ul>
+</section>

@@ -4,37 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {# font #}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    {# css #}
+    {# <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" /> #}
+    <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}" />
+    {# <link rel="stylesheet" href="/assets/css/tailwind.css" /> #}
 
-  {# stylesheet #}
-   {# <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}"> #}
-   <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
-
-   {# Meta #}
-    <title>{{site.name}}{% if title %} - {{title}} {% endif %} </title>
-    <meta name="description" content="
-      {% if description %}
-        {{description}}
-      {% else %}
-        {{site.description}}
+    <!-- Meta -->
+    {# prettier-ignore #}
+    <title>
+      {{ site.name }}{% if title %}
+        | {{ title }}
       {% endif %}
-    "/>
+    </title>
+    <meta
+      name="description"
+      content="
+      {% if description %}
+        {{ description }}
+      {% else %}
+        {{ site.description }}
+      {% endif %}
+    "
+    />
   </head>
-  <body>
 
-  {% include "partials/_navigation.njk" %}
-
-  
-  <main class="max-w-3xl mx-auto py-12 min-h-screen"> 
-    {% block content %}
-      
-    {{content | safe}}
-    {% endblock %}
-  </main>
-
-     {% include "partials/_footer.njk" %}
+  <body class="min-h-screen bg-gray-200 grid grid-rows-[auto_1fr_auto]">
+    {% include "partials/_navigation.njk" %}
+    <main class="min-h-screeen w-full max-w-5xl mx-auto px-4 py-12">
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+    </main>
+    {% include "partials/_footer.njk" %}
   </body>
 </html>
+
+{# <script type="module">
+  import "/assets/css/tailwind.css";
+</script> #}

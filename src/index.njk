@@ -1,26 +1,26 @@
 ---
 layout: base
 title: Home
-tags: page # add this
+tags: page
 order: 1
 ---
 
-<img src="/assets/images/learn.png" alt="" width='600'>
+<div class="w-92 mx-auto">
+  <img src="/assets/images/learn.png" alt="" class="w-92 block mx-auto" />
+</div>
+<section class="mx-auto max-w-3xl">
+  <!-- Shortcode in use -->
+  {% headers "Home", "Learning SSG" %}
 
-{#  Old Shortcode #}
-{# {% headers "Home", "Learning SSG"%} #}
-
-{# New Shortcode #}
-{% pageHeading  "Home", "Learning SSG with Eleventy"%}
-
-
-<br>
-
-I am a site built with <a href="https://www.11ty.io/">Eleventy</a>
-
-This site is my effort to understand Eleventy. I am doing so by guiding others.
-
-Together, we will Learn Eleventy, and make something cool along the way.
-
-
-<p>Current Articles in the Learn Eleventy series: 8</p>
+  <div class="mt-5 max-w-prose mx-auto space-y-2">
+    <p>
+      I am a site built with
+      <a href="https://www.11ty.io/" class="text-cyan-700">Eleventy</a>
+    </p>
+    <p class="">
+      This site is my effort to understand Eleventy. I am doing so by guiding
+      others.
+    </p>
+    <p>Together, we will Learn Eleventy.</p>
+  </div>
+</section>

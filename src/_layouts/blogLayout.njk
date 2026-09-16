@@ -1,30 +1,10 @@
 {% extends "./base.njk" %}
 
 {% block content %}
+  <h1 class="text-3xl text-center font-semibold">{{ title }}</h1>
+  <div class="max-w-prose mx-auto mt-5">{{ content| safe }}</div>
+  <br />
+  {% include "partials/_paginate.njk" %}
 
-<div class="prose">
-{{content| safe}}
-<small>
-{{page.date | postDate}}
-</small>
-</div>
-
-<br/>
-
-<div class="border-t border-gray-400"></div>
-<br>
-{# {% include "partials/_postDate.njk"%} #}
-
-{% include "partials/_paginate.njk" %}
-
-<br>
-<div class="border-t border-gray-400"></div>
-<br>
-<a class='text-center font-semibold text-sky-600 block uppercase text-lg' href="/blog">Blog Home</a>
+  <a class="blog-home text-center mt-4 block" href="/blog/">Blog Home</a>
 {% endblock %}
-
-{# <div class="relative flex py-5 items-center">
-    <div class="flex-grow border-t border-gray-400"></div>
-    <span class="flex-shrink mx-4 text-gray-400">Break</span>
-    <div class="flex-grow border-t border-gray-400"></div>
-</div> #}

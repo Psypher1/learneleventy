@@ -4,22 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all -p dev:*",
-    "build": "run-s build:*",
-    "dev:11ty": "eleventy --serve",
-    "dev:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --watch --postcss",
-    "build:11ty": "eleventy",
-    "build:css": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --postcss"
+    "dev": "exec eleventy --serve",
+    "build": "exec eleventy ",
+    "write": "exec prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.0.9",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-plugin-vite": "^8.0.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "eleventy-plugin-tailwindcss-4": "^3.0.0",
+    "luxon": "^3.7.2",
+    "tailwindcss": "^4.3.3"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1",
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.7",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.3"
+    "prettier": "^3.8.1",
+    "prettier-plugin-jinja-template": "^2.2.0"
   }
 }
