@@ -4,6 +4,8 @@ import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 
 // import tailwindcss from "eleventy-plugin-tailwindcss-4";
 
+import Headers from "./src/_includes/shortcodes/Headers.js";
+
 export default function (eleventyConfig) {
   // pass through copies
   eleventyConfig.addPassthroughCopy("src/assets/css/tailwind.css");
@@ -21,12 +23,14 @@ export default function (eleventyConfig) {
   //   output: "assets/css/main.css", // optional
   // });
 
-  eleventyConfig.addShortcode(
-    "headers",
-    (title, subtitle, titleClass = "", subtitleClass = "") =>
-      `<h1 class="${titleClass}">${title}</h1>
-     <p class="${subtitleClass}">${subtitle}</p>`,
-  );
+  eleventyConfig.addShortcode("headers", Headers);
+
+  // eleventyConfig.addShortcode(
+  //   "headers",
+  //   (title, subtitle, titleClass = "", subtitleClass = "") =>
+  //     `<h1 class="${titleClass}">${title}</h1>
+  //    <p class="${subtitleClass}">${subtitle}</p>`,
+  // );
 
   eleventyConfig.addCollection("page", function (collections) {
     return collections.getFilteredByTag("page").sort(function (a, b) {

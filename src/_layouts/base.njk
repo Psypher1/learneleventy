@@ -35,10 +35,12 @@
     />
   </head>
 
-  <body class="min-h-screen grid grid-rows-[auto_1fr_auto]">
+  <body class="min-h-screen bg-gray-200 grid grid-rows-[auto_1fr_auto]">
     {% include "partials/_navigation.njk" %}
     <main class="min-h-screeen w-full max-w-5xl mx-auto px-4 py-12">
-      {{ content | safe }}
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
     </main>
     {% include "partials/_footer.njk" %}
   </body>

@@ -1,10 +1,10 @@
----
-layout: base
----
+{% extends "./base.njk" %}
 
-<h1 class="text-3xl text-center font-semibold">{{ title }}</h1>
-<div class="max-w-prose mx-auto mt-5">{{ content| safe }}</div>
-<br />
-{% include "partials/_paginate.njk" %}
+{% block content %}
+  <h1 class="text-3xl text-center font-semibold">{{ title }}</h1>
+  <div class="max-w-prose mx-auto mt-5">{{ content| safe }}</div>
+  <br />
+  {% include "partials/_paginate.njk" %}
 
-<a class="blog-home text-center mt-4 block" href="/blog/">Blog Home</a>
+  <a class="blog-home text-center mt-4 block" href="/blog/">Blog Home</a>
+{% endblock %}
